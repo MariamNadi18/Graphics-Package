@@ -26,8 +26,12 @@ namespace circle
 
         private void circlePoint(int xc, int yc, int x, int y)
         {
+          
             var aBrush = Brushes.Black;
             var g = panel1.CreateGraphics();
+            var aPen = new Pen(Color.Black, 2);
+            g.DrawLine(aPen, 10, 162, 766, 162);
+            g.DrawLine(aPen, 345, 10, 345, 312);
             g.FillRectangle(aBrush, (xc+x), (yc+y), 1, 1);
             g.FillRectangle(aBrush, (xc-x), (yc+y), 1, 1);
             g.FillRectangle(aBrush, (xc+x), (yc-y), 1, 1);
@@ -36,6 +40,7 @@ namespace circle
             g.FillRectangle(aBrush, (xc-y), (yc+x), 1, 1);
             g.FillRectangle(aBrush, (xc+y), (yc-x), 1, 1);
             g.FillRectangle(aBrush, (xc-y), (yc-x), 1, 1);
+           
         }
 
         private void Circle_draw (int r, int xc, int yc)
@@ -70,7 +75,7 @@ namespace circle
                 int x_center = Convert.ToInt32(textBox1.Text);
                 int y_center = Convert.ToInt32(textBox2.Text);
                 int r = Convert.ToInt32(textBox3.Text);
-                Circle_draw(r, x_center, y_center);
+                Circle_draw(r, x_center + 345, -y_center + 162);
             }
             catch (Exception ex)
             {

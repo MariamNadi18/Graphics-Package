@@ -27,6 +27,9 @@ namespace ellipse
         {
             var aBrush = Brushes.Black;
             var g = panel1.CreateGraphics();
+            var aPen = new Pen(Color.Black, 2);
+            g.DrawLine(aPen, 10, 162, 766, 162);
+            g.DrawLine(aPen, 345, 10, 345, 312);
             g.FillRectangle(aBrush, (xc + x), (yc + y), 1, 1);
             g.FillRectangle(aBrush, (xc - x), (yc + y), 1, 1);
             g.FillRectangle(aBrush, (xc + x), (yc - y), 1, 1);
@@ -85,7 +88,7 @@ namespace ellipse
                 int y_center = Convert.ToInt32(textBox2.Text);
                 int rx = Convert.ToInt32(textBox4.Text);
                 int ry = Convert.ToInt32(textBox3.Text);
-                DrawEllipse(x_center, y_center, rx, ry);
+                DrawEllipse(x_center + 345, -y_center + 162, rx, ry);
             }
             catch (Exception)
             {
@@ -96,3 +99,5 @@ namespace ellipse
        
     }
 }
+
+
